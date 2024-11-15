@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IUCN Red Data Book</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Styles for the Red List page */
+    .filter-container {
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .category-container{
+        margin: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .category-container select{
+        padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+    .filter-container input,
+    .filter-container select {
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+    .species-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin: 20px;
+    }
+    .species-card {
+      width: 200px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      background-color: #fff;
+    }
+    .species-card .status {
+      font-weight: bold;
+      color: #ff5252;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>IUCN Red List Data Book</h1>
+    <p>Explore endangered species and their conservation status.</p>
+    <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mammals.html">Mammals</a></li>
+          <li><a href="birds.html">Birds</a></li>
+          <li><a href="reptiles.html">Reptiles</a></li>
+          <li><a href="amphibians.html">Amphibians</a></li>
+          <li><a href="fish.html">Fish</a></li>
+          <li><a href="redlist.html">IUCN red list</a></li>
+          <li><a href="#map">Interactive Map</a></li>
+          <li><a href="#quiz">Quiz</a></li>
+          <li><a href="#donate">Donate</a></li>
+        </ul>
+      </nav>
+  </header>
+  <div class="category-container">
+  <select id="categoryFilter">
+    <option value="all">All Species</option>
+    <option value="mammals">Mammals</option>
+    <option value="birds">Birds</option>
+    <option value="reptiles">Reptiles</option>
+    <option value="amphibians">Amphibians</option>
+    <option value="fish">Fish</option>
+    <option value="plants">Plants</option>
+    <option value="invertebrates">invertebrates</option>
+
+
+  </select></div>
+  <div class="filter-container">
+    <input type="text" id="searchBar" placeholder="Search for a species...">
+    <select id="statusFilter">
+      <option value="">All Statuses</option>
+      <option value="Critically Endangered">Critically Endangered</option>
+      <option value="Endangered">Endangered</option>
+      <option value="Vulnerable">Vulnerable</option>
+      <option value="Near Threatened">Near Threatened</option>
+    </select>
+  </div>
+  
+  
+  
+  <div class="species-grid" id="speciesGrid">
+    <!-- Species cards will be generated here -->
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

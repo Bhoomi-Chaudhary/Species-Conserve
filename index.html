@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Endangered Species Conservation</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Maps API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</head>
+<body>
+  <header>
+    <h1>Endangered Species Conservation</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#species">Species Profiles</a></li>
+        <li><a href="#map">Interactive Map</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#donate">Donate</a></li>
+        <li><a href="mammals.html">Mammals</a></li>
+        <li><a href="birds.html">Birds</a></li>
+        <li><a href="reptiles.html">Reptiles</a></li>
+        <li><a href="amphibians.html">Amphibians</a></li>
+        <li><a href="fish.html">Fish</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Welcome to Endangered Species Conservation</h2>
+    <p>Learn about endangered species, conservation efforts, and how you can make a difference.</p>
+  </section>
+
+  <section id="species">
+    <h2>Species Profiles</h2>
+    <div class="species-container">
+      <div class="species-card">
+        <h3>Tiger</h3>
+        <p>Status: Endangered</p>
+        <img src="images/tiger.jpeg" alt="Tiger">
+      </div>
+      <div class="species-card">
+        <h3>Elephant</h3>
+        <p>Status: Endangered</p>
+        <img src="images/elephant.jpeg" alt="Elephant">
+      </div>
+      <div class="species-card">
+        <h3>Rhinoceros</h3>
+        <p>Status: Endangered</p>
+        <img src="images/rhino.jpeg" alt="Rhinoceros">
+      </div>
+      <div class="species-card">
+        <h3>Gorilla</h3>
+        <p>Status: Endangered</p>
+        <img src="images/gorilla.jpeg" alt="Gorilla">
+      </div>
+      <div class="species-card">
+        <h3>Panda</h3>
+        <p>Status: Endangered</p>
+        <img src="images/panda.jpeg" alt="Panda">
+      </div>
+    </div>
+  </section>
+
+  <section id="map">
+    <h2>Interactive Map</h2>
+    <div id="map-container" style="height: 500px; width: 100%;"></div>
+  </section>
+
+  <section id="quiz">
+    <h2>Test Your Knowledge</h2>
+    <button onclick="startQuiz()">Take the Quiz</button>
+    <div id="quiz-container"></div>
+  </section>
+
+  <section id="donate">
+    <h2>Support Conservation</h2>
+    <p>Help us protect endangered species. Your donation makes a difference!</p>
+    <button id="donate-now">Donate Now</button>
+    <div id="donation-box" class="hidden">Thank you for your support!</div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

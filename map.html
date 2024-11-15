@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Endangered Species Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <style>
+    /* Style for the map container */
+    #map {
+      height: 80vh;
+      width: 100%;
+      margin-top: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #4CAF50;
+    }
+  </style>
+</head>
+<body>
+  <h1>Endangered Species Locations</h1>
+  <div id="map"></div>
+
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script>
+    // Initialize the map
+    const map = L.map('map').setView([20, 0], 2);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Define endangered species locations
+    const speciesLocations = [
+      { coords: [-1.2921, 36.8219], name: "Black Rhino", location: "Kenya", status: "Critically Endangered" },
+      { coords: [-13.1631, -72.5450], name: "Spectacled Bear", location: "Peru", status: "Vulnerable" },
+      { coords: [27.7172, 85.3240], name: "Red Panda", location: "Nepal", status: "Endangered" },
+      { coords: [-14.2350, -51.9253], name: "Jaguar", location: "Brazil", status: "Near Threatened" },
+      { coords: [35.8617, 104.1954], name: "Giant Panda", location: "China", status: "Vulnerable" },
+      { coords: [-23.4425, -58.4438], name: "Hyacinth Macaw", location: "Paraguay", status: "Vulnerable" },
+      { coords: [37.7749, -122.4194], name: "California Condor", location: "California, USA", status: "Critically Endangered" }
+    ];
+
+    // Add markers to the map
+    speciesLocations.forEach(species => {
+      const marker = L.marker(species.coords).addTo(map);
+      marker.bindPopup(<h3>${species.name}</h3><p>Location: ${species.location}</p><p>Status: ${species.status}</p>);
+    });
+  </script>
+</body>
+</html>
